@@ -1,0 +1,12 @@
+﻿ImageMapster:
+	- seems to be the way
+	- method calls from JS work, all user action can be handled this way
+	- JS calls from code behind work as well BUT
+		- map areas cannot be styled via CSS
+		- must try to make mapster-calls from code behind to fill/edit area fills
+
+If ImageMapster won't work:
+either:
+	- create modified copies for each(!) field to swap them via JS mouseover
+or:
+	- try and make SVG AreaMaps work

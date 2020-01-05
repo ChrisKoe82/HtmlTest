@@ -117,6 +117,7 @@
     <Content Include="Resources\Beobachtungsbogen.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Resources\ToDo.txt" />
     <Resource Include="Resources\EntwicklungSchnecke.jpeg" />
     <Content Include="Resources\jquery.imagemapster.js" />
     <Content Include="Resources\Styles.css" />

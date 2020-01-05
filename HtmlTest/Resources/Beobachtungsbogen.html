@@ -9,14 +9,16 @@
 </head>
 <body>
     <div>
-        <img id="image" usemap="#bogenmap" src="Bogen.PNG" />
+        <img id="image" usemap="#bogenmap" src="Bogen.svg" />
     </div>
 
     <map id="bogenmap" name="bogenmap">
         <!-- Hören, Sehen, Verstehen -->
         <!--<area id="1" data-key="1" shape="rect" coords="627,300,675,249" onclick="javascript:window.external.InvokeMeFromJavaScript('1');"/>-->
-        <area name="1a" shape="poly" coords="627,300,655,297,674,251" href="#"/>
-        <area name="1b" shape="poly" coords="627,300,674,251,630,250" href="#"/>
+        <!--areas for png image-->
+        <area name="1a" shape="poly" coords="627,300,655,297,674,251" href="#" />
+        <area name="1b" shape="poly" coords="627,300,674,251,630,250" href="#" />
+
     </map>
     <script>
         var image = $('#image')
@@ -31,24 +33,31 @@
             mapKey: 'name',
             listKey: 'name',
             onClick: function (e) {
-                alert('clicked' + e.key);
+                //alert('clicked' + e.key);
                 window.external.InvokeMeFromJavaScript(e.key);
-            },
-            areas: [
-                {
-                    key: "1a",
-                    fillColor:"ffffff"
-                },
-                {
-                    key: "1b",
-                    fillColor:"000000"
-                }
-            ]
+            }
+            //,
+            //areas: [
+            //    {
+            //        key: "1a",
+            //        fillColor:"ffffff"
+            //    },
+            //    {
+            //        key: "1b",
+            //        fillColor:"000000"
+            //    }
+            //]
         });
 
         function FillField(e) {
-            document.getElementsByName(e).fill = "pink";
-        }
+            $(e).mapster({
+                fillColor: "pink",
+                fillOpacity: 0.9,
+                stroke: false
+            });
+            $(e).mapster('select');
+            $('1b').mapster('select');
+        };
     </script>
 </body>
 </html>
